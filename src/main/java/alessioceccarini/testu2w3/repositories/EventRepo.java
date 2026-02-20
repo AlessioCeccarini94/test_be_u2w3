@@ -1,4 +1,4 @@
-package alessioceccarini.testu2w3.controllers;
+package alessioceccarini.testu2w3.repositories;
 
 import alessioceccarini.testu2w3.entities.Event;
 import org.springframework.data.repository.CrudRepository;

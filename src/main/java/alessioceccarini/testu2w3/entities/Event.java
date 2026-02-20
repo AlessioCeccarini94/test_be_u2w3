@@ -23,6 +23,9 @@ public class Event {
 	private String eventDescription;
 	private LocalDate eventDate;
 	private int numberOfParticipants;
+	@ManyToOne
+	@JoinColumn(name = "events_mangers")
+	private User user;
 
 	public Event(String eventName, String eventDescription, LocalDate eventDate, int numberOfParticipants) {
 		this.eventName = eventName;

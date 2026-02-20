@@ -23,7 +23,8 @@ public class SecurityConfig {
 		//STATLESS
 		httpSecurity.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 		//PERMIT ALL HTTP REQUEST
-		httpSecurity.authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/**").permitAll());
+		httpSecurity.authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/**").permitAll()
+				.requestMatchers("/eventManager/**").hasRole("ADMIN").anyRequest().authenticated());
 		return httpSecurity.build();
 	}
 
